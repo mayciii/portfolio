@@ -28,19 +28,3 @@ This project showcases my skills, projects, and background as an aspiring develo
 
 ---
 
-## 📂 Project Structure
-
-```bash
-portfolio/
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── templates/
-│   └── index.html
-│
-├── app.py
-├── requirements.txt
-└── README.md
