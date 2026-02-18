@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data.name }} | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050914">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body>
+
+<!-- Ambient background -->
+<div class="ambient" aria-hidden="true">
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="grid-overlay"></div>
+</div>
+
+<!-- ─── NAVBAR ─── -->
+<header class="navbar" id="navbar">
+    <div class="nav-inner wrap">
+        <a class="nav-logo" href="#">
+            <span class="logo-dot"></span>
+            {{ data.name }}
+        </a>
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- ─── HERO ─── -->
+<section id="hero" class="hero reveal">
+    <div class="hero-content wrap">
+        <div class="hero-text">
+            <div class="hero-badge">✦ Available for work</div>
+            <h1>Hi, I'm <br><span class="highlight">{{ data.name }}</span></h1>
+            <p class="typing-wrap"><span class="typing">{{ data.title }}</span><span class="cursor">|</span></p>
+            <p class="lead">{{ data.about }}</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View My Work <span class="btn-arrow">→</span></a>
+                <a href="#contact" class="btn-ghost">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="img-frame">
+                    <img src="{{ url_for('static', filename='images/ID.png') }}" alt="{{ data.name }}">
+                <div class="img-ring"></div>
+                <div class="img-glow"></div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
+    </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="about-section wrap reveal">
+    <div class="section-label">// ABOUT</div>
+    <div class="about-grid">
+        <div class="about-avatar">
+              <img src="{{ url_for('static', filename='images/ID.png') }}" alt="{{ data.name }}">
+        </div>
+        <div class="about-card glass-card">
+            <h2>About Me</h2>
+            <p>{{ data.about }}</p>
+            <div class="about-links">
+                <a href="{{ data.github }}" target="_blank" class="chip-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.532 1.03 1.532 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    GitHub
+                </a>
+                <a href="{{ data.linkedin }}" target="_blank" class="chip-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section id="skills" class="skills-section wrap reveal">
+    <div class="section-label">// SKILLS</div>
+    <h2>My Toolkit</h2>
+    <div class="skills-grid">
+        {% for skill in data.skills %}
+        <div class="skill-card glass-card">
+            <div class="skill-icon">
+                {% if skill.name.lower() == 'html' %}
+                    <img src="{{ url_for('static', filename='images/tech/html.svg') }}" alt="HTML">
+                {% elif skill.name.lower() == 'css' %}
+                    <img src="{{ url_for('static', filename='images/tech/css.svg') }}" alt="CSS">
+                {% elif skill.name.lower() == 'javascript' %}
+                    <img src="{{ url_for('static', filename='images/tech/js.svg') }}" alt="JavaScript">
+                {% elif skill.name.lower() == 'python' %}
+                    <img src="{{ url_for('static', filename='images/tech/python.svg') }}" alt="Python">
+                {% else %}
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.3 16.6L2 12l6.3-4.6L9 9.7 6.6 12 9 14.3l-.7 2.3zM15.7 16.6l.7-2.3L18.4 12 16.4 9.7l.7-1.1L22 12l-5.3 4.6z"/></svg>
+                {% endif %}
+            </div>
+            <span class="skill-name">{{ skill.name }}</span>
+            <div class="skill-glow"></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ─── PROJECTS ─── -->
+<section id="projects" class="projects-section wrap reveal">
+    <div class="section-label">// PROJECTS</div>
+    <h2>Selected Work</h2>
+    <div class="projects-grid">
+        {% for project in data.projects %}
+        <article class="project-card glass-card">
+            <div class="project-media">
+                <div class="project-media-inner"></div>
+                <div class="project-number">0{{ loop.index }}</div>
+            </div>
+            <div class="project-info">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                <div class="project-tags">
+                    {% for tech in project.technologies %}
+                    <span class="tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                <a class="project-link" href="{{ project.github }}" target="_blank" rel="noopener">
+                    View on GitHub
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="contact-section wrap reveal">
+    <div class="section-label">// CONTACT</div>
+    <div class="contact-grid">
+        <div class="contact-intro">
+            <h2>Let's Build<br><span class="highlight">Something</span><br>Together</h2>
+            <p>Want to collaborate or have a question? Drop me a message and I'll get back to you soon.</p>
+            <p class="contact-email">
+                <a href="/cdn-cgi/l/email-protection#7f04045f1b1e0b1e511a121e16135f0202">{{ data.email }}</a>
+            </p>
+        </div>
+        <form id="contactForm" class="contact-form glass-card" aria-label="Contact form">
+            <div class="form-group">
+                <input name="name" type="text" placeholder="Your name" required autocomplete="off">
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <input name="email" type="email" placeholder="Your email" required autocomplete="off">
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <input name="subject" type="text" placeholder="Subject (optional)" autocomplete="off">
+                <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+                <span class="form-line"></span>
+            </div>
+            <button type="submit" class="btn-primary submit-btn">
+                Send Message <span class="btn-arrow">→</span>
+            </button>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+    <div class="wrap footer-inner">
+        <span>© {{ year }} {{ data.name }}</span>
+        <span class="footer-dot">✦</span>
+        <span>Built with Flask</span>
+    </div>
+</footer>
+
+<!-- ─── MODAL ─── -->
+<div id="successModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-content glass-card">
+        <button id="modalClose" class="modal-close" aria-label="Close">×</button>
+        <div class="modal-icon">✓</div>
+        <h3>Message Sent!</h3>
+        <p>Thanks <strong><span id="userName"></span></strong> — I'll get back to you soon.</p>
+        <button id="modalOk" class="btn-primary">Close</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+</body>
+</html>
