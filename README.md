@@ -7,24 +7,4 @@ This project showcases my skills, projects, and background as an aspiring develo
 
 ---
 
-## ✨ Features
-
-- 📌 Responsive and modern UI design  
-- 👤 About Me section  
-- 💼 Projects showcase section  
-- 🛠 Skills / Tech stack section  
-- 📞 Contact form connected to backend (Flask)  
-- 📩 Auto-send message to email (Email integration)  
-- ⚡ Smooth scrolling & interactive UI elements  
-
----
-
-## 🛠 Built With
-
-- **Frontend:** HTML5, CSS3, JavaScript  
-- **Backend:** Python (Flask)  
-- **Email Service:** SMTP / Flask-Mail  (still Not Working)
-- **Version Control:** Git & GitHub  
-
----
 
